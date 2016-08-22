@@ -22,7 +22,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("News", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Pokémon", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Pokédex", "Index", "Home")</li>
                     <li>@Html.ActionLink("Forum", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
@@ -34,7 +34,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer class="fotter">
             <p>
                 &copy;@DateTime.Now.Year Niantic, Inc.
                 &copy;@DateTime.Now.Year Pokémon. 
