@@ -2014,7 +2014,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 }(window.jQuery);
 
 var vid = document.getElementById("bgvid");
-var pauseButton = document.querySelector("#polina button");
+var pauseButton = document.querySelector("#homeControler button");
 
 function vidFade() {
     vid.classList.add("stopfade");

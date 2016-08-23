@@ -7111,7 +7111,7 @@ video {
     height: auto;
     z-index: -100;
     transform: translateX(-50%) translateY(-50%);
-    background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+    background: url('//demosthenes.info/assets/images/homeControler.jpg') no-repeat;
     background-size: cover;
     transition: 1s opacity;
 }
@@ -7120,25 +7120,41 @@ video {
     opacity: .5;
 }
 
-#polina {
+#homeControler {
     font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
     font-weight: 100;
     background: rgba(0,0,0,0.3);
     color: white;
     padding: 2rem;
+    width: 33%;
+    font-size: 1.2rem;
+    float: right;
+    border-style: solid;
+    border-width: 5px;
+}
+
+#home-structure {
+    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    font-weight: 100;
+    background: rgba(0,0,0,0.2);
+    color: white;
+    padding: 2rem;
+    padding-top: 10px;
     width: 33%;
     font-size: 1.2rem;
     display: inline-block;
+ 
 }
-
-#polina-right {
+#polina-left {
     font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
     font-weight: 100;
     background: rgba(0,0,0,0.3);
     color: white;
     padding: 2rem;
+    padding-top: 10px;
     width: 33%;
     font-size: 1.2rem;
+    float: left;
     display: inline-block;
 }
 
@@ -7149,7 +7165,7 @@ h1 {
     letter-spacing: .3rem;
 }
 
-#polina button {
+#homeControler button {
     display: block;
     width: 80%;
     padding: .4rem;
@@ -7163,13 +7179,10 @@ h1 {
     transition: .3s background;
 }
 
-    #polina button:hover {
-        background: rgba(0,0,0,0.5);
-    }
+#homeControler button:hover {
+    background: rgba(0,0,0,0.5);
+}
 
-/*a:hover{
-  background:rgba(0,0,0,0.9);
-}*/
 @media screen and (max-width: 500px) {
     div {
         width: 70%;
@@ -7178,22 +7191,13 @@ h1 {
 
 @media screen and (max-device-width: 800px) {
     html {
-        background: url(//demosthenes.info/assets/images/polina.jpg) #000 no-repeat center center fixed;
+        background: url(//demosthenes.info/assets/images/homeControler.jpg) #000 no-repeat center center fixed;
     }
 
     #bgvid {
         display: none;
     }
 }
-
-/*footer {
-    font-size: 10px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    margin-left: 10px;
-    margin-right: 10px;
-}*/
 
 .desc {
     font-size: 15px;
