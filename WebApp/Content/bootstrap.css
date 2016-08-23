@@ -7133,10 +7133,14 @@ video {
     border-width: 5px;
 }
 
-#home-structure {
+.home-structure {
     font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
     font-weight: 100;
+<<<<<<< HEAD:WebApp/WebApp/Content/bootstrap.css
     background: rgba(0,0,0,0.2);
+=======
+    background: rgba(0,0,0,0.0);
+>>>>>>> 6477038a72bad0d2821b3cba90302fe34b669d22:WebApp/Content/bootstrap.css
     color: white;
     padding: 2rem;
     padding-top: 10px;
