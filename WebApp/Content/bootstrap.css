@@ -7136,17 +7136,11 @@ video {
 .home-structure {
     font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
     font-weight: 100;
-<<<<<<< HEAD:WebApp/WebApp/Content/bootstrap.css
-    background: rgba(0,0,0,0.2);
-=======
-    background: rgba(0,0,0,0.0);
->>>>>>> 6477038a72bad0d2821b3cba90302fe34b669d22:WebApp/Content/bootstrap.css
     color: white;
     padding: 2rem;
     padding-top: 10px;
     width: 33%;
     font-size: 1.2rem;
-    display: inline-block;
  
 }
 #polina-left {
@@ -7212,3 +7206,97 @@ h1 {
     font-size: 13px;
     font-weight: 400;
 }
+<<<<<<< HEAD
+figure { 
+    
+    display: inline-block;
+    text-align:left;
+}
+.abilities span {
+    font-family: "Flexo-Medium",arial,sans-serif;
+    border-radius: 3px;
+    line-height: 18px;
+    max-width: 110px;
+    margin: 0 1.5625% 0 0;
+    width: 38.43%;
+    float: left;
+    text-transform: none;
+    font-size: 11px;
+    text-align: center;
+}
+.background-color-grass {
+    
+    background: -webkit-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+    background: -moz-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+    background: -o-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+    background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+    background-color: #9bcc50;
+    color: #212121;
+    
+}
+.background-color-poison {
+    background: -webkit-linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
+    background: -moz-linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
+    background: -o-linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
+    background: linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
+    background-color: #b97fc9;
+    color: #fff;
+}
+.background-color-fire {
+    background: -webkit-linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
+    background: -moz-linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
+    background: -o-linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
+    background: linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
+    background-color: #fd7d24;
+    color: #fff;
+}
+.background-color-flying {
+    background: -webkit-linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+    background: -moz-linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+    background: -o-linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+    background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+    background-color: #3dc7ef;
+    color: #212121;
+}
+=======
+
+input, textarea {
+	padding: 10px;
+	border: 1px solid #E5E5E5;
+	width: 200px;
+	color: #999999;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;		
+}
+
+textarea {
+	width: 400px;
+	height: 150px;
+	max-width: 400px;
+	line-height: 18px;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+	border-color: 1px solid #C9C9C9;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;	
+}
+
+.form label {
+	margin-left: 10px;
+	color: #999999;
+}
+
+.submit input {
+	width: 100px; 
+	height: 40px;
+	background-color: #474E69; 
+	color: #FFF;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;		
+}
+>>>>>>> db9d188d58551a7d0ecd84f5b5c6cf9bb753f609

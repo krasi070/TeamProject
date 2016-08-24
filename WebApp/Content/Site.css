@@ -22,6 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+<<<<<<< HEAD
 html, body {
 	height: 100%;
 }
@@ -31,4 +32,10 @@ html, body {
 }
 footer, .push {
 	height: 155px; /* '.push' must be the same height as 'footer' */
+=======
+.fotter {
+    position: relative;
+ bottom:0;
+ left:0;
+>>>>>>> 53177fcd5a9714ba78be6b151776c71d4c7a7210
 }

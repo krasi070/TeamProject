@@ -1,11 +1,33 @@
-﻿@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <body background="~/background/about.jpg">
+    <h2>Contact Form</h2>
+
+    <form class="form" style="float: left">
+
+        <p class="name">
+            <input type="text" name="name" id="name" placeholder="John Doe" />
+            <label for="name" style="color: white">Name</label>
+        </p>
+
+        <p class="email">
+            <input type="text" name="email" id="email" placeholder="mail@example.com" />
+            <label for="email" style="color: white">Email</label>
+        </p>
+
+        <p class="web">
+            <input type="text" name="web" id="web" placeholder="www.example.com" />
+            <label for="web" style="color: white">Website</label>
+        </p>
+
+        <p class="text">
+            <textarea name="text" placeholder="Write something to us"></textarea>
+        </p>
+
+        <p class="submit">
+            <input type="submit" value="Send" />
+        </p>
+    </form>
     <p>
         <a href="https://bg-bg.facebook.com/PokemonGO/" target="_blank">
             <img src="~/background/facebook.png" />
