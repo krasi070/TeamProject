@@ -7206,7 +7206,7 @@ h1 {
     font-size: 13px;
     font-weight: 400;
 }
-<<<<<<< HEAD
+
 figure { 
     
     display: inline-block;
@@ -7258,7 +7258,6 @@ figure {
     background-color: #3dc7ef;
     color: #212121;
 }
-=======
 
 input, textarea {
 	padding: 10px;
@@ -7299,4 +7298,3 @@ input:focus, textarea:focus {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;		
 }
->>>>>>> db9d188d58551a7d0ecd84f5b5c6cf9bb753f609
