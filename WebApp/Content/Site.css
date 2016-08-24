@@ -23,7 +23,7 @@ textarea {
     max-width: 280px;
 }
 .fotter {
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
+    position: relative;
+ bottom:0;
+ left:0;
 }
