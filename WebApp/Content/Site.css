@@ -23,6 +23,7 @@ textarea {
     max-width: 280px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 html, body {
 	height: 100%;
 }
@@ -39,3 +40,12 @@ footer, .push {
  left:0;
 >>>>>>> 53177fcd5a9714ba78be6b151776c71d4c7a7210
 }
+=======
+
+.fotter {
+    position: relative;
+    color: white;
+    bottom: 0;
+    width: 90%
+}
+>>>>>>> 9c30cd7f5c7dc55e506a8bfcfb971684c082f20e
