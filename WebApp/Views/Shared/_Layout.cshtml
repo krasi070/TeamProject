@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Pokémon GO</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -17,7 +17,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Pokémon Go", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Pokémon GO", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -33,7 +33,11 @@
     </div>
     <div class="container body-content">
         @RenderBody()
+<<<<<<< HEAD
+        <footer class="footer">
+=======
         @*<footer class="fotter">
+>>>>>>> 9c30cd7f5c7dc55e506a8bfcfb971684c082f20e
             <hr />
             <p>
                 &copy;@DateTime.Now.Year Niantic, Inc.
@@ -42,7 +46,6 @@
             </p>
         </footer>*@
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
