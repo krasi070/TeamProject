@@ -24,8 +24,6 @@ textarea {
 }
 
 .footer {
-    margin-left: auto;
-    margin-right: auto;
     position: absolute;
     color: white;
     bottom: 0;

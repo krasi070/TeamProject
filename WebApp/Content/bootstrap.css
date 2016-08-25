@@ -331,7 +331,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.428571429;
-    color: #333333;
+    color: white;
     background-color: #ffffff;
 }
 
@@ -7187,9 +7187,9 @@ h1 {
     transition: .3s background;
 }
 
-#homeControler button:hover {
-    background: rgba(0,0,0,0.5);
-}
+    #homeControler button:hover {
+        background: rgba(0,0,0,0.5);
+    }
 
 @media screen and (max-width: 500px) {
     div {
@@ -7217,11 +7217,11 @@ h1 {
     font-weight: 400;
 }
 
-figure { 
-    
+figure {
     display: inline-block;
-    text-align:left;
+    text-align: left;
 }
+
 .abilities span {
     font-family: "Flexo-Medium",arial,sans-serif;
     border-radius: 3px;
@@ -7234,16 +7234,16 @@ figure {
     font-size: 11px;
     text-align: center;
 }
+
 .background-color-grass {
-    
     background: -webkit-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
     background: -moz-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
     background: -o-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
     background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
     background-color: #9bcc50;
     color: #212121;
-    
 }
+
 .background-color-poison {
     background: -webkit-linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
     background: -moz-linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
@@ -7252,6 +7252,7 @@ figure {
     background-color: #b97fc9;
     color: #fff;
 }
+
 .background-color-fire {
     background: -webkit-linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
     background: -moz-linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
@@ -7260,6 +7261,7 @@ figure {
     background-color: #fd7d24;
     color: #fff;
 }
+
 .background-color-flying {
     background: -webkit-linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
     background: -moz-linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
@@ -7270,41 +7272,41 @@ figure {
 }
 
 input, textarea {
-	padding: 10px;
-	border: 1px solid #E5E5E5;
-	width: 200px;
-	color: #999999;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
-	-moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;		
+    padding: 10px;
+    border: 1px solid #E5E5E5;
+    width: 200px;
+    color: #999999;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
 }
 
 textarea {
-	width: 400px;
-	height: 150px;
-	max-width: 400px;
-	line-height: 18px;
+    width: 400px;
+    height: 150px;
+    max-width: 400px;
+    line-height: 18px;
 }
 
-input:hover, textarea:hover,
-input:focus, textarea:focus {
-	border-color: 1px solid #C9C9C9;
-	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
-	-moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;	
-}
+    input:hover, textarea:hover,
+    input:focus, textarea:focus {
+        border-color: 1px solid #C9C9C9;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+    }
 
 .form label {
-	margin-left: 10px;
-	color: #999999;
+    margin-left: 10px;
+    color: #999999;
 }
 
 .submit input {
-	width: 100px; 
-	height: 40px;
-	background-color: #474E69; 
-	color: #FFF;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;		
+    width: 100px;
+    height: 40px;
+    background-color: #474E69;
+    color: #FFF;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
 }

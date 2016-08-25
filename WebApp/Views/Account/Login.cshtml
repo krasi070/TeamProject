@@ -44,28 +44,11 @@
                     <p>
                         @Html.ActionLink("Register as a new user", "Register")
                     </p>
-                    @* Enable this once you have account confirmation enabled for password reset functionality
-                        <p>
-                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                        </p>*@
                 }
-            </section>
-        </div>
-        <div class="col-md-4">
-            <section id="socialLoginForm">
-                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
             </section>
         </div>
     </div>
 </body>
-<footer class="fotter" style="padding-top: 30px; position: absolute">
-    <hr />
-    <p>
-        &copy;@DateTime.Now.Year Niantic, Inc.
-        &copy;@DateTime.Now.Year Pokémon.
-        &copy;1995–@DateTime.Now.Year Nintendo / Creatures Inc. / GAME FREAK inc.
-    </p>
-</footer>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
