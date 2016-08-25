@@ -22,30 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-html, body {
-	height: 100%;
-}
-.wrapper {
-	min-height: 100%;
-	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
-}
-footer, .push {
-	height: 155px; /* '.push' must be the same height as 'footer' */
-=======
-.fotter {
-    position: relative;
- bottom:0;
- left:0;
->>>>>>> 53177fcd5a9714ba78be6b151776c71d4c7a7210
-}
-=======
 
 .fotter {
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     color: white;
     bottom: 0;
-    width: 90%
 }
->>>>>>> 9c30cd7f5c7dc55e506a8bfcfb971684c082f20e
