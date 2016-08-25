@@ -9,7 +9,6 @@
 
 </head>
 <body>
-<<<<<<< HEAD
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -47,47 +46,4 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-=======
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            @Html.ActionLink("Pokémon GO", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("News", "News", "Home")</li>
-                <li>@Html.ActionLink("Pokédex", "Pokédex", "Home")</li>
-                <li>@Html.ActionLink("Forum", "Forum", "Home")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-            </ul>
-            @Html.Partial("_LoginPartial")
-        </div>
-    </div>
-</div>
-
-<div class="container body-content">
-    @RenderBody()
-</div>
-
-
-
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
-@RenderSection("scripts", required: false)
->>>>>>> 352fe91d511eaeab9c8d7526c642d09d22c5f5de
 </body>
-<footer>
-    <hr />
-    <p>
-        &copy;@DateTime.Now.Year Niantic, Inc.
-        &copy;@DateTime.Now.Year Pokémon.
-        &copy;1995–@DateTime.Now.Year Nintendo / Creatures Inc. / GAME FREAK inc.
-    </p>
-</footer>
-</html>

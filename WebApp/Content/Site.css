@@ -22,7 +22,6 @@ select,
 textarea {
     max-width: 280px;
 }
-<<<<<<< HEAD
 
 .fotter {
     margin-left: auto;
@@ -31,16 +30,3 @@ textarea {
     color: white;
     bottom: 0;
 }
-=======
-html, body {
-	height: 100%;
-}
-.wrapper {
-	min-height: 100%;
-	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
-}
-.footer {
-    position: absolute;
-    bottom:0;
-}
->>>>>>> 352fe91d511eaeab9c8d7526c642d09d22c5f5de
