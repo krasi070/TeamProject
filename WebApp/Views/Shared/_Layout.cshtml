@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
@@ -35,10 +35,7 @@
 </div>
 <div class="container body-content">
     @RenderBody()
-
 </div>
-
-
 </body>
 <footer class="footer">
     <hr />
@@ -48,3 +45,22 @@
         &copy;1995–@DateTime.Now.Year Nintendo / Creatures Inc. / GAME FREAK inc.
     </p>
 </footer>
+<script type="text/javascript">
+    $('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
+
+    var amountScrolled = 10;
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > amountScrolled) {
+            $('a.back-to-top').fadeIn('slow');
+        } else {
+            $('a.back-to-top').fadeOut('slow');
+        }
+    });
+    $('a.back-to-top').click(function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 700);
+        return false;
+    });
+</script>
