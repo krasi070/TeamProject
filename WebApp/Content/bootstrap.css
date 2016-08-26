@@ -7302,11 +7302,11 @@ textarea {
 }
 
 .submit input {
-    width: 100px;
-    height: 40px;
-    background-color: #474E69;
+    width: 120px;
+    height: 50px;
+    background-color: black;
     color: #FFF;
-    border-radius: 3px;
+    border-radius: 5px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
 }
