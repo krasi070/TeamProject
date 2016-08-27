@@ -1,10 +1,12 @@
 ﻿body {
+    height: 100vh;
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    min-height: 90%;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -24,9 +26,10 @@ textarea {
 }
 
 .footer {
-    position: absolute;
+    margin: auto;
+    width: 80%;
     color: white;
-    bottom: 0;
+    bottom: 200px;
 }
 a.back-to-top {
 	display: none;
