@@ -7339,3 +7339,13 @@ textarea {
 .about-contents {
     font-size: 17px;
 }
+
+.center {
+    text-align: center;
+}
+
+.striped-background {
+    background: #424242 url("http://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png");
+    color: #fff;
+    height: 100%;
+}
