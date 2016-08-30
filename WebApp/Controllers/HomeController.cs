@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using WebApp.Models;
 
 namespace WebApp.Controllers
 {
@@ -19,27 +22,6 @@ namespace WebApp.Controllers
         public ActionResult Contact()
         {
             this.ViewBag.Message = "Your contact page.";
-
-            return this.View();
-        }
-
-        public ActionResult Forum()
-        {
-            this.ViewBag.Message = "Your forum page";
-
-            return this.View();
-        }
-
-        public ActionResult Pokédex()
-        {
-            this.ViewBag.Message = "Your Pokedex page";
-
-            return this.View();
-        }
-
-        public ActionResult News()
-        {
-            this.ViewBag.Message = "Your News page";
 
             return this.View();
         }

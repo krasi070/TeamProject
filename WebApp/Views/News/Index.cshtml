@@ -1,0 +1,24 @@
+﻿@using WebApp.Models;
+@{
+    ViewBag.Title = "News Page";
+}
+
+@model List<News>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body background="~/background/back.jpg">
+    @foreach (var news in Model)
+    {
+        <div class="news">
+            <div class="news-heading">@news.Title</div>
+            <hr />
+            <div class="news-content">@news.Body</div>
+        </div>
+    }
+</body>
+</html>
