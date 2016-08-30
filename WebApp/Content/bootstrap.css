@@ -7136,22 +7136,27 @@ video {
 
 .news {
     display: inline-block;
-    width: 40%;
+    width: 41%;
     height: 30%;
     margin: 50px;
+    font-family:Arial
+    
 }
 
 .news-heading {
-    font-size: 40px;
+    font-size: 37px;
     font-family: serif;
     color: white;
     padding-top: 30px;
+    font-family:Arial
+
 }
 
 .news-content {
     font-size: 25px;
     font-family: cursive;
-    color: whitesmoke;
+    color: white;    
+    font-family:Arial
 }
 
 #polina-left {
@@ -7495,4 +7500,17 @@ textarea {
     background: #424242 url("http://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png");
     color: #fff;
     height: 100%;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+.new{
+border-bottom:0px;
+height:100%;
+width:41%;
+display:inline-block;
+}
+.news_align{
+display:inline-block;
 }
