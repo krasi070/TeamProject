@@ -7230,7 +7230,7 @@ figure {
 }
 
 .abilities span {
-    font-family: "Flexo-Medium",arial,sans-serif;
+    font-family: "Flexo-Medium", arial, sans-serif;
     border-radius: 3px;
     line-height: 18px;
     max-width: 110px;
@@ -7504,8 +7504,16 @@ textarea {
     min-height: 90%;
     padding-left: 15px;
     padding-right: 15px;
-
 }
+
+.striped-background-white {
+    background: #fff url("http://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png");
+    color: #fff;
+    min-height: 90%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 td, th {
     display: table-cell;
     vertical-align: inherit;
@@ -7541,6 +7549,14 @@ font-size:20px;
     font-family: "Fira Sans", "Tahoma", "Ubuntu", "Trebuchet MS", "Helvetica", "Arial";
     background-color: #fff;
     border-top: 1px solid black;
+    box-sizing: border-box;
+    background: #fff;
+    clear: both;
+    display: block;
+    margin: 0 auto;
+    max-width: 1280px;
+    overflow: hidden;
+    position: relative;
 }
 
 .pokemon-name > a {
@@ -7557,5 +7573,158 @@ font-size:20px;
 }
 
 .pokemon-detail-text {
-    padding-top: 40px;
+    padding-top: 10px;
+}
+
+.pokemon-details-text {
+    font-size: 18pt;
+    font-weight: 500;
+}
+
+.pokemon-details-text > a {
+    color: black;
+}
+
+.pokemon-details-text > a:hover {
+    text-decoration: none;
+    color: #8f8f8f;
+}
+
+.pokemon-details-hr {
+    border-top: 2px solid black;
+}
+
+.pokemon-details-description {
+    font-size: 14pt;
+    font-weight: 300;
+}
+
+.abilities-details > span {
+    font-family: "Flexo-Medium", arial, sans-serif;
+    border-radius: 3px;
+    line-height: 18px;
+    max-width: 110px;
+    margin: 0 1.5625% 0 0;
+    width: 38.43%;
+    text-transform: none;
+    font-size: 16px;
+    text-align: center;
+    padding: 7px;
+}
+
+.back-button {
+    float: right;
+    margin-bottom: 20px;
+}
+
+.forum-title {
+    font-weight: 500;
+    color: black;
+}
+
+.left-part {
+    width: 20%;
+    float: left;
+    background-color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    position: fixed;
+    background-color: transparent;
+}
+
+.right-part {
+    position: relative;
+    width: 75%;
+    float: right;
+    text-align: center;
+    background-color: #27AE61;
+    margin-right: -4px;
+}
+
+.question-button {
+    background-color: #27AE61;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 95%;
+    /*box-shadow: 8px 8px 5px #888888;*/
+}
+
+.question-button:hover{
+    background-color: white;
+    color: #27AE61;
+}
+
+.forum-table th {
+    color: #234465;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.forum-table, .forum-table th, .forum-table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #EAEAEA;
+}
+
+.forum-table th, .forum-table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.forum-table td {
+    height: 60px;
+    font-size: 30px;
+}
+
+.forum-table {
+    width: 97%;
+    margin: auto;
+    color: black;
+}
+.table-padding {
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.tags {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.tags li {
+    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+.tags li:last-child {
+    border: none;
+}
+
+.tags li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 90%;
+    text-align: center;
+    -webkit-transition: font-size 0.1s ease, background-color 0.1s ease;
+    -moz-transition: font-size 0.1s ease, background-color 0.1s ease;
+    -o-transition: font-size 0.1s ease, background-color 0.1s ease;
+    -ms-transition: font-size 0.1s ease, background-color 0.1s ease;
+    transition: font-size 0.1s ease, background-color 0.1s ease;
+}
+
+.tags li a:hover {
+    font-size: 30px;
+    color: white;
+    border-radius: 20px;
+    background-color: #27AE61;
 }

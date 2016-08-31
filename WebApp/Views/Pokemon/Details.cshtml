@@ -5,45 +5,155 @@
 }
 
 <body class="striped-background">
-    <div class="pokemon-details">
+    <div class="pokemon-details" style="background-color: white">
         <div class="col-md-5">
             @{
                 var base64 = Convert.ToBase64String(Model.Image);
                 var imageSrc = string.Format("data:image/gif;base64,{0}", base64);
             }
 
-            <img src="@imageSrc" scale="0" width="400" height="400" class="pokemon-detail-image"/>
+            <img src="@imageSrc" scale="0" width="400" height="400" class="pokemon-detail-image" />
         </div>
         <div class="col-md-5 pokemon-detail-text">
-            <hr />
+            <hr class="pokemon-details-hr" />
 
-            @Html.DisplayNameFor(model => model.Name)
+            <div class="pokemon-details-text">Name: @Html.DisplayFor(model => model.Name)</div>
 
-            @Html.DisplayFor(model => model.Name)
+            <hr class="pokemon-details-hr" />
 
-            <hr />
+            <div class="pokemon-details-text">
+                Type:
+                <span class="abilities-details" style="float: none">
+                    @switch (Model.MainType)
+                    {
+                        case "Grass":
+                            <span class="pill background-color-grass">Grass</span>
+                            break;
+                        case "Poison":
+                        <span class="pill background-color-poison">Poison</span>
+                            break;
+                        case "Fire":
+                        <span class="pill background-color-fire">Fire</span>
+                            break;
+                        case "Flying":
+                        <span class="pill background-color-flying">Flying</span>
+                            break;
+                        case "Water":
+                        <span class="pill background-color-water">Water</span>
+                            break;
+                        case "Bug":
+                        <span class="pill background-color-bug">Bug</span>
+                            break;
+                        case "Normal":
+                        <span class="pill background-color-normal">Normal</span>
+                            break;
+                        case "Electric":
+                        <span class="pill background-color-electric">Electric</span>
+                            break;
+                        case "Ground":
+                        <span class="pill background-color-ground">Ground</span>
+                            break;
+                        case "Fairy":
+                        <span class="pill background-color-fairy">Fairy</span>
+                            break;
+                        case "Fighting":
+                        <span class="pill background-color-fighting">Fighting</span>
+                            break;
+                        case "Psychic":
+                        <span class="pill background-color-psychic">Psychic</span>
+                            break;
+                        case "Rock":
+                        <span class="pill background-color-rock">Rock</span>
+                            break;
+                        case "Steel":
+                        <span class="pill background-color-steel">Steel</span>
+                            break;
+                        case "Ice":
+                        <span class="pill background-color-ice">Ice</span>
+                            break;
+                        case "Ghost":
+                        <span class="pill background-color-ghost">Ghost</span>
+                            break;
+                        case "Dragon":
+                        <span class="pill background-color-dragon">Dragon</span>
+                            break;
+                    }
+                </span>
+                @if (!string.IsNullOrEmpty(Model.SecondaryType))
+                {
+                    <span class="abilities-details" style="float: none">
+                        @switch (Model.SecondaryType)
+                        {
+                            case "Grass":
+                                <span class="pill background-color-grass">Grass</span>
+                                break;
+                            case "Poison":
+                            <span class="pill background-color-poison">Poison</span>
+                                break;
+                            case "Fire":
+                            <span class="pill background-color-fire">Fire</span>
+                                break;
+                            case "Flying":
+                            <span class="pill background-color-flying">Flying</span>
+                                break;
+                            case "Water":
+                            <span class="pill background-color-water">Water</span>
+                                break;
+                            case "Bug":
+                            <span class="pill background-color-bug">Bug</span>
+                                break;
+                            case "Normal":
+                            <span class="pill background-color-normal">Normal</span>
+                                break;
+                            case "Electric":
+                            <span class="pill background-color-electric">Electric</span>
+                                break;
+                            case "Ground":
+                            <span class="pill background-color-ground">Ground</span>
+                                break;
+                            case "Fairy":
+                            <span class="pill background-color-fairy">Fairy</span>
+                                break;
+                            case "Fighting":
+                            <span class="pill background-color-fighting">Fighting</span>
+                                break;
+                            case "Psychic":
+                            <span class="pill background-color-psychic">Psychic</span>
+                                break;
+                            case "Rock":
+                            <span class="pill background-color-rock">Rock</span>
+                                break;
+                            case "Steel":
+                            <span class="pill background-color-steel">Steel</span>
+                                break;
+                            case "Ice":
+                            <span class="pill background-color-ice">Ice</span>
+                                break;
+                            case "Ghost":
+                            <span class="pill background-color-ghost">Ghost</span>
+                                break;
+                            case "Dragon":
+                            <span class="pill background-color-dragon">Dragon</span>
+                                break;
+                        }
+                    </span>
+                }
+            </div>
 
-            @Html.DisplayNameFor(model => model.MainType)
+            <hr class="pokemon-details-hr" />
 
-            @Html.DisplayFor(model => model.MainType)
+            <div class="pokemon-details-text">Description: 
+                <span class="pokemon-details-description">@Html.DisplayFor(model => model.Description)</span>
+            </div>
 
-            <hr />
+            <hr class="pokemon-details-hr"/>
 
-            @Html.DisplayNameFor(model => model.SecondaryType)
+            <div>
+                <a href='@Url.Action("Index", "Pokemon")'>
+                    <img src='@Url.Content("~/background/backButton.png")' width="50" height="50" class="back-button"/>
+                </a>
+            </div>
 
-            @Html.DisplayFor(model => model.SecondaryType)
-
-            <hr />
-
-            @Html.DisplayNameFor(model => model.Description)
-
-            @Html.DisplayFor(model => model.Description)
-
-            <hr />
         </div>
-    </div>
-    <div>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
     </div>
 </body>
