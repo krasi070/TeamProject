@@ -7137,7 +7137,7 @@ video {
 
 .news {
     display: inline-block;
-    width: 41%;
+    width: 40%;
     height: 30%;
     margin: 50px;
     font-family:Arial
@@ -7149,7 +7149,7 @@ video {
     font-family: serif;
     color: white;
     padding-top: 30px;
-    font-family:Arial
+    font-family:Arial 
 
 }
 
@@ -7514,6 +7514,7 @@ border-bottom:0px;
 height:100%;
 display:inline-block;
 }
+<<<<<<< HEAD
 .date{
 font-size:14px;
 text-align:left;
@@ -7530,3 +7531,9 @@ font-size:20px;
 
 }
 
+=======
+.news_align{
+display:inline-block;
+    width: 100%;
+}
+>>>>>>> 7fb1b0fdbbc90852eb9a448b9dd0b35f1b45d6d1
