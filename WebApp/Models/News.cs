@@ -15,6 +15,7 @@ namespace WebApp.Models
         public string Title { get; set; }
 
         [Required]
+        [DataType(DataType.MultilineText)]
         public string Body { get; set; }
 
         [Column(TypeName = "date")]

@@ -1205,6 +1205,7 @@ pre {
     }
 
     .col-md-10 {
+        text-align: right;
         width: 83.33333333333334%;
     }
 
@@ -1892,6 +1893,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .form-control {
     display: block;
+    max-width: 945px;
     width: 100%;
     height: 34px;
     padding: 6px 12px;
@@ -7140,8 +7142,7 @@ video {
     width: 40%;
     height: 30%;
     margin: 50px;
-    font-family:Arial
-    
+    font-family: Arial;
 }
 
 .news-heading {
@@ -7149,15 +7150,14 @@ video {
     font-family: serif;
     color: white;
     padding-top: 30px;
-    font-family:Arial 
-
+    font-family: Arial;
 }
 
 .news-content {
     font-size: 25px;
     font-family: cursive;
-    color: white;    
-    font-family:Arial
+    color: white;
+    font-family: Arial;
 }
 
 #polina-left {
@@ -7443,13 +7443,20 @@ textarea {
     border-radius: 4px;
 }
 
-    input:hover, textarea:hover,
-    input:focus, textarea:focus {
-        border-color: 1px solid #C9C9C9;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
-        -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
-        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
-    }
+.ivan-textarea {
+    height: 400px;
+    max-width: 945px;
+    line-height: 18px;
+    border-radius: 4px;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+    border-color: 1px solid #C9C9C9;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+}
 
 .form label {
     margin-left: 10px;
@@ -7490,6 +7497,7 @@ textarea {
 .about-titles {
     font-style: italic;
 }
+
 .about-contents {
     font-size: 17px;
 }
@@ -7518,29 +7526,32 @@ td, th {
     display: table-cell;
     vertical-align: inherit;
 }
-.new{
-border-bottom:0px;
-height:100%;
-display:inline-block;
+
+.new {
+    border-bottom: 0px;
+    height: 100%;
+    display: inline-block;
 }
-.date{
-font-size:14px;
-text-align:left;
+
+.date {
+    font-size: 14px;
+    text-align: left;
 }
-.hr{
+
+.hr {
     margin-top: 2px;
     margin-bottom: 10px;
     border: 0;
     border-top: 1px solid #eeeeee;
 }
-.body-text{
-font-family: "Times New Roman", Times, serif;
-font-size:20px;
 
+.body-text {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
 }
 
 .news_align {
-    display:inline-block;
+    display: inline-block;
     width: 100%;
 }
 
@@ -7563,10 +7574,10 @@ font-size:20px;
     color: inherit;
 }
 
-.pokemon-name > a:hover {
-    text-decoration: none;
-    color: #8f8f8f;
-}
+    .pokemon-name > a:hover {
+        text-decoration: none;
+        color: #8f8f8f;
+    }
 
 .pokemon-detail-image {
     padding-top: 30px;
@@ -7581,14 +7592,14 @@ font-size:20px;
     font-weight: 500;
 }
 
-.pokemon-details-text > a {
-    color: black;
-}
+    .pokemon-details-text > a {
+        color: black;
+    }
 
-.pokemon-details-text > a:hover {
-    text-decoration: none;
-    color: #8f8f8f;
-}
+        .pokemon-details-text > a:hover {
+            text-decoration: none;
+            color: #8f8f8f;
+        }
 
 .pokemon-details-hr {
     border-top: 2px solid black;
@@ -7658,10 +7669,10 @@ font-size:20px;
     /*box-shadow: 8px 8px 5px #888888;*/
 }
 
-.question-button:hover{
-    background-color: white;
-    color: #27AE61;
-}
+    .question-button:hover {
+        background-color: white;
+        color: #27AE61;
+    }
 
 .forum-table th {
     color: #234465;
@@ -7675,21 +7686,22 @@ font-size:20px;
     background-color: #EAEAEA;
 }
 
-.forum-table th, .forum-table td {
-    padding: 8px;
-    text-align: left;
-}
+    .forum-table th, .forum-table td {
+        padding: 8px;
+        text-align: left;
+    }
 
-.forum-table td {
-    height: 60px;
-    font-size: 30px;
-}
+    .forum-table td {
+        height: 60px;
+        font-size: 30px;
+    }
 
 .forum-table {
     width: 97%;
     margin: auto;
     color: black;
 }
+
 .table-padding {
     padding-top: 15px;
     padding-bottom: 10px;
@@ -7701,30 +7713,35 @@ font-size:20px;
     padding: 10px;
 }
 
-.tags li {
-    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-}
+    .tags li {
+        font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+    }
 
-.tags li:last-child {
-    border: none;
-}
+        .tags li:last-child {
+            border: none;
+        }
 
-.tags li a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    width: 90%;
-    text-align: center;
-    -webkit-transition: font-size 0.1s ease, background-color 0.1s ease;
-    -moz-transition: font-size 0.1s ease, background-color 0.1s ease;
-    -o-transition: font-size 0.1s ease, background-color 0.1s ease;
-    -ms-transition: font-size 0.1s ease, background-color 0.1s ease;
-    transition: font-size 0.1s ease, background-color 0.1s ease;
-}
+        .tags li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            width: 90%;
+            text-align: center;
+            -webkit-transition: font-size 0.1s ease, background-color 0.1s ease;
+            -moz-transition: font-size 0.1s ease, background-color 0.1s ease;
+            -o-transition: font-size 0.1s ease, background-color 0.1s ease;
+            -ms-transition: font-size 0.1s ease, background-color 0.1s ease;
+            transition: font-size 0.1s ease, background-color 0.1s ease;
+        }
 
-.tags li a:hover {
-    font-size: 30px;
-    color: white;
-    border-radius: 20px;
-    background-color: #27AE61;
+            .tags li a:hover {
+                font-size: 30px;
+                color: white;
+                border-radius: 20px;
+                background-color: #27AE61;
+                padding-top: 40px;
+            }
+
+.add-news {
+    width: 400px;
 }

@@ -12,6 +12,7 @@ namespace WebApp.Models
         public ForumPost()
         {
             Comments = new HashSet<Comment>();
+            this.Date = DateTime.Now;
         }
 
         public int Id { get; set; }
@@ -21,6 +22,7 @@ namespace WebApp.Models
         public string Title { get; set; }
 
         [Required]
+        [DataType(DataType.MultilineText)]
         public string Body { get; set; }
 
         [Column(TypeName = "date")]
