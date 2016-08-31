@@ -7136,7 +7136,7 @@ video {
 
 .news {
     display: inline-block;
-    width: 41%;
+    width: 40%;
     height: 30%;
     margin: 50px;
     font-family:Arial
@@ -7148,7 +7148,7 @@ video {
     font-family: serif;
     color: white;
     padding-top: 30px;
-    font-family:Arial
+    font-family:Arial 
 
 }
 
@@ -7508,9 +7508,9 @@ td, th {
 .new{
 border-bottom:0px;
 height:100%;
-width:41%;
 display:inline-block;
 }
 .news_align{
 display:inline-block;
+    width: 100%;
 }
