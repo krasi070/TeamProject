@@ -7439,6 +7439,7 @@ textarea {
     height: 150px;
     max-width: 400px;
     line-height: 18px;
+    border-radius: 4px;
 }
 
     input:hover, textarea:hover,
@@ -7499,7 +7500,9 @@ textarea {
 .striped-background {
     background: #424242 url("http://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png");
     color: #fff;
-    height: 100%;
+    min-height: 90%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 td, th {
     display: table-cell;
