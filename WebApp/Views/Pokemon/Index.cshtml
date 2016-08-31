@@ -23,7 +23,7 @@
                     <figure class="pokemon-figure">
                         <img src="@imageSrc" scale="0" width="200" height="200"/>
                         <br>#@Model[i + j].Id<br>
-                        <span class="pokemon-name">@Model[i + j].Name</span>
+                        <span class="pokemon-name">@Html.ActionLink(Model[i + j].Name, "Details", new {id = Model[i + j].Id})</span>
                         <div class="abilities">
                             @switch (Model[i + j].MainType)
                             {

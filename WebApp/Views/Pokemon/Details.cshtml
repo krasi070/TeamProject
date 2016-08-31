@@ -4,55 +4,46 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<body class="striped-background">
+    <div class="pokemon-details">
+        <div class="col-md-5">
+            @{
+                var base64 = Convert.ToBase64String(Model.Image);
+                var imageSrc = string.Format("data:image/gif;base64,{0}", base64);
+            }
 
-<div>
-    <h4>Pokemon</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
+            <img src="@imageSrc" scale="0" width="400" height="400" class="pokemon-detail-image"/>
+        </div>
+        <div class="col-md-5 pokemon-detail-text">
+            <hr />
+
             @Html.DisplayNameFor(model => model.Name)
-        </dt>
 
-        <dd>
             @Html.DisplayFor(model => model.Name)
-        </dd>
 
-        <dt>
+            <hr />
+
             @Html.DisplayNameFor(model => model.MainType)
-        </dt>
 
-        <dd>
             @Html.DisplayFor(model => model.MainType)
-        </dd>
 
-        <dt>
+            <hr />
+
             @Html.DisplayNameFor(model => model.SecondaryType)
-        </dt>
 
-        <dd>
             @Html.DisplayFor(model => model.SecondaryType)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
+            <hr />
 
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Description)
-        </dt>
 
-        <dd>
             @Html.DisplayFor(model => model.Description)
-        </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            <hr />
+        </div>
+    </div>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>

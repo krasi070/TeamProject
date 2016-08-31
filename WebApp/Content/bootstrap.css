@@ -7531,7 +7531,31 @@ font-size:20px;
 
 }
 
-.news_align{
-display:inline-block;
+.news_align {
+    display:inline-block;
     width: 100%;
+}
+
+.pokemon-details {
+    color: black;
+    font-family: "Fira Sans", "Tahoma", "Ubuntu", "Trebuchet MS", "Helvetica", "Arial";
+    background-color: #fff;
+    border-top: 1px solid black;
+}
+
+.pokemon-name > a {
+    color: inherit;
+}
+
+.pokemon-name > a:hover {
+    text-decoration: none;
+    color: #8f8f8f;
+}
+
+.pokemon-detail-image {
+    padding-top: 30px;
+}
+
+.pokemon-detail-text {
+    padding-top: 40px;
 }
