@@ -536,6 +536,7 @@ h2,
     font-size: 30px;
     font-weight: bold;
     color: white;
+    text-align: center;
 }
 
 h3,
@@ -7503,6 +7504,7 @@ textarea {
     min-height: 90%;
     padding-left: 15px;
     padding-right: 15px;
+
 }
 td, th {
     display: table-cell;
@@ -7513,6 +7515,22 @@ border-bottom:0px;
 height:100%;
 display:inline-block;
 }
+.date{
+font-size:14px;
+text-align:left;
+}
+.hr{
+    margin-top: 2px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #eeeeee;
+}
+.body-text{
+font-family: "Times New Roman", Times, serif;
+font-size:20px;
+
+}
+
 .news_align{
 display:inline-block;
     width: 100%;
