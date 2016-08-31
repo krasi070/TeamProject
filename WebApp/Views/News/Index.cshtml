@@ -17,14 +17,13 @@
     {
         for (int i = 0; i < Model.Count; i += 2)
         {
-<<<<<<< HEAD
         <div class="new">
             <div class="news">
                 <div class="news-heading">@Model[i].Title</div>
                 <div class="news-date">@Model[i].Date.Day.@Model[i].Date.Month.@Model[i].Date.Year</div>
                 <hr />
                 <div class="news-content">
-                    @Model[i].Body.Substring(0, 188)
+                    @Model[i].Body.Substring(0, 94)...
                     @Html.ActionLink("Read more", "Details", new { id = Model[i].Id })
                 </div>
             </div>
@@ -34,49 +33,50 @@
 
                 <hr />
                 <div class="news-content">
-                    @Model[i + 1].Body.Substring(0, 188)
+                    @Model[i + 1].Body.Substring(0, 94)...
                     @Html.ActionLink("Read more", "Details", new { id = Model[i + 1].Id })
                 </div>
-=======
-            for (int i = 0; i < Model.Count; i += 2)
-            {
-            <div class="new">
-                    <div class="news">
-                        <div class="news-heading">@Model[i].Title</div>
-                        <div class="news-date">@Model[i].Date.Day.@Model[i].Date.Month.@Model[i].Date.Year</div>
-                        <hr />
-                        <div class="news-content">
-                            @Model[i].Body.Substring(0, 94)...
-                            @Html.ActionLink("Read more", "Details", new { id = Model[i].Id })
-                        </div>
-                    </div>
-                    <div class="news">
-                        <div class="news-heading">@Model[i + 1].Title</div>
-                        <div class="news-date">@Model[i + 1].Date.Day.@Model[i + 1].Date.Month.@Model[i + 1].Date.Year</div>
-
-                        <hr />
-                        <div class="news-content">
-                            @Model[i + 1].Body.Substring(0,94)...
-                            @Html.ActionLink("Read more", "Details", new { id = Model[i + 1].Id })
-                        </div>
-                    </div>                
->>>>>>> 7fb1b0fdbbc90852eb9a448b9dd0b35f1b45d6d1
             </div>
         </div>
-
-
-
-
-            @*int position = news.Body.IndexOf("(readmore)");
-                <div class="news">
-                    <div class="news-heading">@news.Title</div>
-                    <hr />
-                    <div class="news-content">
-                        @news.Body.Substring(0, position)
-                        @Html.ActionLink("Read more", "Details", new { id = news.Id })
-                    </div>
-                </div>*@
         }
+    }
+    else
+    {
+        for (int i = 0; i < Model.Count - 1; i += 2)
+        {
+        <div class="new">
+            <div class="news">
+                <div class="news-heading">@Model[i].Title</div>
+                <div class="news-date">@Model[i].Date.Day.@Model[i].Date.Month.@Model[i].Date.Year</div>
+                <hr />
+                <div class="news-content">
+                    @Model[i].Body.Substring(0, 94)...
+                    @Html.ActionLink("Read more", "Details", new { id = Model[i].Id })
+                </div>
+            </div>
+            <div class="news">
+                <div class="news-heading">@Model[i + 1].Title</div>
+                <div class="news-date">@Model[i + 1].Date.Day.@Model[i + 1].Date.Month.@Model[i + 1].Date.Year</div>
+
+                <hr />
+                <div class="news-content">
+                    @Model[i + 1].Body.Substring(0, 94)...
+                    @Html.ActionLink("Read more", "Details", new { id = Model[i + 1].Id })
+                </div>
+            </div>
+        </div>
+        }
+        <div class="new">
+            <div class="news">
+                <div class="news-heading">@Model[Model.Count - 1].Title</div>
+                <div class="news-date">@Model[Model.Count - 1].Date.Day.@Model[Model.Count - 1].Date.Month.@Model[Model.Count - 1].Date.Year</div>
+                <hr />
+                <div class="news-content">
+                    @Model[Model.Count - 1].Body.Substring(0, 94)...
+                    @Html.ActionLink("Read more", "Details", new { id = Model[Model.Count - 1].Id })
+                </div>
+            </div>
+        </div>
     }
 </body>
 </html>
