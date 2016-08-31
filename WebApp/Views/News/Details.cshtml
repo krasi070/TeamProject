@@ -3,40 +3,25 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>News</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(news => news.Title)
-        </dt>
-
-        <dd>
+<body class="striped-background">
+        <h2>
             @Html.DisplayFor(news => news.Title)
-        </dd>
+        </h2>
+    <div class="date">
+        @Html.DisplayFor(news => news.Date.Day).@Html.DisplayFor(news => news.Date.Month).@Html.DisplayFor(news => news.Date.Year)
 
-        <dt>
-            @Html.DisplayNameFor(news => news.Body)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(news => news.Body)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(news => news.Date)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(news => news.Date)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    </div>
+        <div>
+            <hr class="hr" />
+            <dl class="dl-horizontal">
+                <div class="body-text">
+                    @Html.DisplayFor(news => news.Body)
+                </div>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+   
+</body>
