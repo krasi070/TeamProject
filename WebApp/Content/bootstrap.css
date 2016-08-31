@@ -1205,6 +1205,7 @@ pre {
     }
 
     .col-md-10 {
+        text-align:right;
         width: 83.33333333333334%;
     }
 
@@ -1892,6 +1893,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .form-control {
     display: block;
+    max-width:945px;
     width: 100%;
     height: 34px;
     padding: 6px 12px;
@@ -1906,6 +1908,7 @@ input[type="number"]::-webkit-inner-spin-button {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+
 }
 
     .form-control:focus {
@@ -7436,9 +7439,9 @@ input, textarea {
 }
 
 textarea {
-    width: 400px;
-    height: 150px;
-    max-width: 400px;
+    width: 100%;
+    height: 400px;
+    max-width: 10000px;
     line-height: 18px;
     border-radius: 4px;
 }
@@ -7541,6 +7544,14 @@ font-size:20px;
     font-family: "Fira Sans", "Tahoma", "Ubuntu", "Trebuchet MS", "Helvetica", "Arial";
     background-color: #fff;
     border-top: 1px solid black;
+    box-sizing: border-box;
+    background: #fff;
+    clear: both;
+    display: block;
+    margin: 0 auto;
+    max-width: 1280px;
+    overflow: hidden;
+    position: relative;
 }
 
 .pokemon-name > a {
@@ -7558,4 +7569,7 @@ font-size:20px;
 
 .pokemon-detail-text {
     padding-top: 40px;
+}
+.add-news{
+width:400px;
 }
