@@ -7755,3 +7755,9 @@ td, th {
 .box-size {
     width: 20%;
 }
+.comment-body {
+    
+    text-align: center;
+    background-color: #27AE61;
+    margin-right: -4px;
+}

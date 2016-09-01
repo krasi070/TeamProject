@@ -5,48 +5,40 @@
 }
 
 <body class="striped-background">
-    <h2>Details</h2>
+    <main class="right-part">
+        <div class="table-padding">
+            <table class="forum-table">
+                <tr>
+                    <th colspan="2">
+                        @Model.Title
+                    </th>
+                </tr>
 
-    <div>
-        <h4>ForumPost</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Title)
-            </dt>
+                <tr>
+                    <td><i>Posted by avtora</i></td>
+                    <td>
+                        <i>Posted on </i>
+                        @string.Format("{0}.{1}.{2}",
+                            Model.Date.Day.ToString().PadLeft(2, '0'),
+                            Model.Date.Month.ToString().PadLeft(2, '0'),
+                            Model.Date.Year)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="comment-body">
+                        @Model.Body
+                    </td>
+                </tr>
 
-            <dd>
-                @Html.DisplayFor(model => model.Title)
-            </dd>
+            </table>
+        </div>
+            @foreach (var comment in Model.Comments)
+            {
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Body)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Body)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Date)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Date)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.AuthorId)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.AuthorId)
-            </dd>
-
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+            }
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+</main>
 </body>
