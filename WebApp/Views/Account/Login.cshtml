@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Log in";
 }
-<body background="~/background/back.jpg">
+<body class="striped-background">
     <h2>@ViewBag.Title</h2>
     <div class="row">
         <div class="col-md-8">
@@ -16,20 +16,20 @@
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
                         @Html.LabelFor(m => m.Username, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
+                        <div class="col-md-10" style="max-width: 30%">
                             @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
                             @*@Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })*@
                         </div>
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
+                        <div class="col-md-10" style="max-width: 30%">
                             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
+                        <div class="col-md-offset-2 col-md-10" style="max-width: 20%">
                             <div class="checkbox">
                                 @Html.CheckBoxFor(m => m.RememberMe)
                                 @Html.LabelFor(m => m.RememberMe)
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
+                        <div class="col-md-offset-2 col-md-10" style="max-width: 30%" s>
                             <input type="submit" value="Log in" class="btn btn-default" />
                         </div>
                     </div>

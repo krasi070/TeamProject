@@ -1956,7 +1956,7 @@ textarea.form-control {
     .checkbox input[type="checkbox"],
     .checkbox-inline input[type="checkbox"] {
         float: left;
-        margin-left: -110px;
+        margin-left: -65px;
     }
 
     .radio + .radio,
@@ -7748,4 +7748,10 @@ td, th {
 
 .add-news {
     width: 400px;
+}
+.box-content {
+    text-align: left;
+}
+.box-size {
+    width: 20%;
 }
