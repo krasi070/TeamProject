@@ -11,8 +11,9 @@ namespace WebApp.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ForumPost()
         {
-            Comments = new HashSet<Comment>();
             this.Date = DateTime.Now;
+            Comments = new HashSet<Comment>();
+            Tags = new HashSet<Tag>();
         }
 
         public int Id { get; set; }
@@ -33,5 +34,8 @@ namespace WebApp.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tag> Tags { get; set; }
     }
 }

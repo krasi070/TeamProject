@@ -8,10 +8,15 @@ namespace WebApp.Models
 
     public partial class Comment
     {
+        public Comment()
+        {
+            this.Date = DateTime.Now;
+        }
+
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [DataType(DataType.MultilineText)]
         public string Text { get; set; }
 
         [Column(TypeName = "date")]

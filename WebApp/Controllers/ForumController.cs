@@ -129,6 +129,8 @@ namespace WebApp.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ForumPost forumPost = db.ForumPosts.Find(id);
+            db.Comments.RemoveRange(forumPost.Comments);
+            db.Tags.RemoveRange(forumPost.Tags);
             db.ForumPosts.Remove(forumPost);
             db.SaveChanges();
             return RedirectToAction("Index");

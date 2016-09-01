@@ -24,6 +24,11 @@ namespace WebApp.Models
                 .HasMany(e => e.Comments)
                 .WithRequired(e => e.ForumPost)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ForumPost>()
+                .HasMany(e => e.Tags)
+                .WithMany(e => e.ForumPosts)
+                .Map(m => m.ToTable("ForumPosts_Tags").MapLeftKey("ForumPostId").MapRightKey("TagId"));
         }
     }
 }
