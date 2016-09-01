@@ -5,7 +5,6 @@
 }
 
 <body class="striped-background">
-<<<<<<< HEAD
     <div class="left-part">
         <button class="question-button">+New Question</button>
         <h1 style="text-align: center">Tags</h1>
@@ -21,25 +20,41 @@
         <div class="table-padding">
             <table class="table_legenda">
                 <tr>
-                    <th colspan="2" style="text-align: center">@Model.ForumPost.Title</th>
+                    <th colspan="2" style="text-align: center">
+                        @Model.ForumPost.Title
+                        @if (User.IsInRole("Admin") || User.Identity.Name == Model.GetUser().UserName)
+                        {
+                            <span>
+                                [@Html.ActionLink("Edit", "Edit", new { id = Model.ForumPost.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = Model.ForumPost.Id })]
+                            </span>
+                        }
+                    </th>
                 </tr>
                 <tr>
-                    <td>
-                        <i>Posted by</i> @Model.GetUser().UserName
-                        <br/>
-                        <i>Posted on</i> @string.Format("{0}.{1}.{2}",
-                                                            Model.ForumPost.Date.Day.ToString().PadLeft(2, '0'),
-                                                            Model.ForumPost.Date.Month.ToString().PadLeft(2, '0'),
-                                                            Model.ForumPost.Date.Year)
+                    <td class="posted-on-by">
+                        <span><i>Posted by</i> @Model.GetUser().UserName</span>
                     </td>
-                    <td>@Model.ForumPost.Body</td>
+                    <td class="posted-on-by">
+                        <span><i>Posted on</i> @string.Format("{0}.{1}.{2}",
+                                             Model.ForumPost.Date.Day.ToString().PadLeft(2, '0'),
+                                             Model.ForumPost.Date.Month.ToString().PadLeft(2, '0'),
+                                             Model.ForumPost.Date.Year)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>
+                            @Model.ForumPost.Body
+                        </p>
+                    </td>
                 </tr>
             </table>
         </div>
         <h1>Comments</h1>
         <hr style="width: 70%; border-width: 5px">
         @{
-            var comments = Model.GetCommentsAsViewModel(); 
+            var comments = Model.GetCommentsAsViewModel();
         }
 
         @foreach (var comment in comments)
@@ -47,59 +62,29 @@
             <div class="table-padding comment-table">
                 <table class="table_legenda">
                     <tr>
-                        <td><i>Commented by</i> @comment.GetUser().UserName</td>
-                        <td><i>Commented on</i> @string.Format("{0}.{1}.{2}",
+                        <td class="posted-on-by">
+                            <span><i>Commented by</i> @comment.GetUser().UserName</span>
+                        </td>
+                        <td class="posted-on-by">
+                            <span><i>Commented on</i> @string.Format("{0}.{1}.{2}",
                                                             comment.Comment.Date.Day.ToString().PadLeft(2, '0'),
                                                             comment.Comment.Date.Month.ToString().PadLeft(2, '0'),
-                                                            comment.Comment.Date.Year)</td>
+                                                            comment.Comment.Date.Year)</span>
+                        </td>
                     </tr>
                     <tr class="comment-content">
-                        <td colspan="2" style="text-align: center">@comment.Comment.Text</td>
+                        <td colspan="2">
+                            <p>
+                                @comment.Comment.Text
+                            </p>
+                        </td>
                     </tr>
                 </table>
             </div>
         }
+        @if (comments.Count == 0)
+        {
+            <span class="no-comments">There are no comments. Be the first one to comment on this post.</span>
+        }
     </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ForumPost.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-=======
-    <main class="right-part">
-        <div class="table-padding">
-            <table class="forum-table">
-                <tr>
-                    <th colspan="2">
-                        @Model.Title
-                    </th>
-                </tr>
-
-                <tr>
-                    <td><i>Posted by avtora</i></td>
-                    <td>
-                        <i>Posted on </i>
-                        @string.Format("{0}.{1}.{2}",
-                            Model.Date.Day.ToString().PadLeft(2, '0'),
-                            Model.Date.Month.ToString().PadLeft(2, '0'),
-                            Model.Date.Year)
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="comment-body">
-                        @Model.Body
-                    </td>
-                </tr>
-
-            </table>
-        </div>
-            @foreach (var comment in Model.Comments)
-            {
-
-            }
-            <p>
-                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-                @Html.ActionLink("Back to List", "Index")
-            </p>
-</main>
->>>>>>> d32a99dd41fdc3c3d09ec9f166b44fd26d17368a
 </body>

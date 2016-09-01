@@ -7703,6 +7703,7 @@ td, th {
 .forum-table td {
     height: 60px;
     font-size: 18px;
+    width: 50%;
 }
 
 .forum-table {
@@ -7747,6 +7748,7 @@ td, th {
 }
 
 .table_legenda {
+    width: 100%;
     color: black;
     table-layout: fixed;
 }
@@ -7763,6 +7765,8 @@ td, th {
     color: #234465;
     font-size: 20px;
     font-weight: bold;
+    color: black;
+    font-size: 36px;
 }
 
 table, .table_legenda th, .table_legenda td {
@@ -7779,4 +7783,17 @@ table, .table_legenda th, .table_legenda td {
 .table_legenda td {
     height: 60px;
     font-size: 30px;
+}
+
+.table_legenda td span, .table_legenda th span {
+    font-size: 16px;
+}
+
+.table_legenda td p {
+    font-size: 26px;
+    word-break: break-all;
+}
+
+.no-comments {
+    font-weight: bold; 
 }
