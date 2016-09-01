@@ -5,6 +5,7 @@
 }
 
 <body class="striped-background">
+<<<<<<< HEAD
     <div class="left-part">
         <button class="question-button">+New Question</button>
         <h1 style="text-align: center">Tags</h1>
@@ -63,4 +64,42 @@
         @Html.ActionLink("Edit", "Edit", new { id = Model.ForumPost.Id }) |
         @Html.ActionLink("Back to List", "Index")
     </p>
+=======
+    <main class="right-part">
+        <div class="table-padding">
+            <table class="forum-table">
+                <tr>
+                    <th colspan="2">
+                        @Model.Title
+                    </th>
+                </tr>
+
+                <tr>
+                    <td><i>Posted by avtora</i></td>
+                    <td>
+                        <i>Posted on </i>
+                        @string.Format("{0}.{1}.{2}",
+                            Model.Date.Day.ToString().PadLeft(2, '0'),
+                            Model.Date.Month.ToString().PadLeft(2, '0'),
+                            Model.Date.Year)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="comment-body">
+                        @Model.Body
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+            @foreach (var comment in Model.Comments)
+            {
+
+            }
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+</main>
+>>>>>>> d32a99dd41fdc3c3d09ec9f166b44fd26d17368a
 </body>
