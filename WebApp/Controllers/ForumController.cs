@@ -34,15 +34,18 @@ namespace WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             ForumPost forumPost = db.ForumPosts.Find(id);
             if (forumPost == null)
             {
                 return HttpNotFound();
             }
-            return View(forumPost);
+
+            return View(new ForumPostViewModel() { ForumPost = forumPost});
         }
 
         // GET: Forum/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -53,7 +56,8 @@ namespace WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Body,AuthorId")] ForumPost forumPost)
+        [Authorize]
+        public ActionResult Create([Bind(Include = "Id,Title,Body")] ForumPost forumPost)
         {
             ApplicationDbContext applicationDbContext = new ApplicationDbContext();
             forumPost.AuthorId = applicationDbContext.Users
@@ -70,6 +74,7 @@ namespace WebApp.Controllers
         }
 
         // GET: Forum/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -89,6 +94,7 @@ namespace WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "Id,Title,Body,Date,AuthorId")] ForumPost forumPost)
         {
             if (ModelState.IsValid)
@@ -101,6 +107,7 @@ namespace WebApp.Controllers
         }
 
         // GET: Forum/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -118,6 +125,7 @@ namespace WebApp.Controllers
         // POST: Forum/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             ForumPost forumPost = db.ForumPosts.Find(id);

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using System.Data.Entity
+@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity.EntityFramework
+@using WebApp.Models
+<!DOCTYPE html>
 
 <head>
     <meta charset="utf-8" />
@@ -24,6 +28,10 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("News", "Index", "News")</li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Add News", "Create", "News")</li>
+                    }
                     <li>@Html.ActionLink("Pokédex", "Index", "Pokemon")</li>
                     <li>@Html.ActionLink("Forum", "Index", "Forum")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>

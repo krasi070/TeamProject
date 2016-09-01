@@ -7746,6 +7746,37 @@ td, th {
     background-color: #27AE61;
 }
 
+.table_legenda {
+    color: black;
+    table-layout: fixed;
+}
+
+.table_legenda th {
+    word-wrap: break-word;
+}
+
 .add-news {
     width: 400px;
+}
+
+.table_legenda th {
+    color: #234465;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+table, .table_legenda th, .table_legenda td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #EAEAEA;
+}
+
+.table_legenda th, .table_legenda td {
+    padding: 8px;
+    text-align: left;
+}
+
+.table_legenda td {
+    height: 60px;
+    font-size: 30px;
 }

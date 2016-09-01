@@ -22,5 +22,12 @@ namespace WebApp.ViewModels
             return this.applicationDbContext.Users
                 .FirstOrDefault(u => u.Id == this.ForumPost.AuthorId);
         }
+
+        public ICollection<CommentViewModel> GetCommentsAsViewModel()
+        {
+            return this.ForumPost.Comments
+                .Select(c => new CommentViewModel() {Comment = c})
+                .ToList();
+        }
     }
 }

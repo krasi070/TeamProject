@@ -1,27 +1,36 @@
-﻿@model WebApp.Models.News
+﻿@using System.Threading
+@using Microsoft.Ajax.Utilities
+@using WebApp.Models
+@model WebApp.Models.News
 
 @{
     ViewBag.Title = "Details";
 }
 <body class="striped-background">
-        <h2>
-            @Html.DisplayFor(news => news.Title)
-        </h2>
+    <h2>
+        @Html.DisplayFor(news => news.Title)
+    </h2>
     <div class="date">
-        @Html.DisplayFor(news => news.Date.Day).@Html.DisplayFor(news => news.Date.Month).@Html.DisplayFor(news => news.Date.Year)
-
+        <i>@string.Format("Posted on {0}.{1}.{2}",
+                        Model.Date.Day.ToString().PadLeft(2, '0'),
+                        Model.Date.Month.ToString().PadLeft(2, '0'),
+                        Model.Date.Year)</i>
     </div>
-        <div>
-            <hr class="hr" />
-            <dl class="dl-horizontal">
-                <div class="body-text">
-                    @Html.DisplayFor(news => news.Body)
-                </div>
-            </dl>
-        </div>
-        <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-            @Html.ActionLink("Back to List", "Index")
-        </p>
-   
+    <div>
+        <hr class="hr" />
+        <dl class="dl-horizontal">
+            <div class="body-text">
+                @Html.DisplayFor(news => news.Body)
+            </div>
+        </dl>
+    </div>
+    <p>
+        @if (User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) @:|
+        }
+
+
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </body>

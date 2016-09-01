@@ -28,7 +28,6 @@ namespace WebApp.Models
         [Column(TypeName = "date")]
         public DateTime Date { get; set; }
 
-        [Required]
         [StringLength(128)]
         public string AuthorId { get; set; }
 

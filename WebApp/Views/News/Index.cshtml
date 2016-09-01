@@ -20,7 +20,15 @@
             <div class="new">
                 <div class="news">
                     <div class="news-heading">@Model[i].Title</div>
-                    <div class="news-date">@Model[i].Date.Day.@Model[i].Date.Month.@Model[i].Date.Year</div>
+                    <div class="news-date">
+                        <i>
+                            @string.Format("Posted on {0}.{1}.{2}",
+                                        Model[i].Date.Day.ToString().PadLeft(2, '0'),
+                                        Model[i].Date.Month.ToString().PadLeft(2, '0'),
+                                        Model[i].Date.Year)
+                    </i>
+
+                    </div>
                     <hr />
                     <div class="news-content">
                         @Model[i].Body.Substring(0, 94)...
@@ -29,7 +37,12 @@
                 </div>
                 <div class="news">
                     <div class="news-heading">@Model[i + 1].Title</div>
-                    <div class="news-date">@Model[i + 1].Date.Day.@Model[i + 1].Date.Month.@Model[i + 1].Date.Year</div>
+                    <div class="news-date">
+                        <i>@string.Format("Posted on {0}.{1}.{2}", 
+                                        Model[i + 1].Date.Day.ToString().PadLeft(2, '0'),
+                                        Model[i + 1].Date.Month.ToString().PadLeft(2, '0'),
+                                        Model[i + 1].Date.Year)</i>
+                    </div>
 
                     <hr />
                     <div class="news-content">
