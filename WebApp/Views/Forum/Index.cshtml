@@ -1,11 +1,14 @@
-﻿@{
+﻿@using WebApp.ViewModels
+@{
     ViewBag.Title = "Forum Page";
 }
+
+@model List<ForumPostViewModel>
 
 <body class="striped-background">
 
     <aside class="left-part">
-        <button class="question-button">+New Question</button>
+        <button class="question-button" onclick="location.href='@Url.Action("Create", "Forum")'">+New Question</button>
         <h1 style="text-align: center">Tags</h1>
         <ul class="tags">
             <li><a href="#">Tag1</a></li>
@@ -18,127 +21,28 @@
 
     <main class="right-part">
         <h1 class="forum-title">Forum</h1>
-        <div class="table-padding">
-            <table class="forum-table">
-                <tr>
-                    <th colspan="2" style="text-align: center">Title</th>
-                </tr>
-                <tr>
-                    <td>Bill Gates</td>
-                    <td>55577854</td>
-                </tr>
-            </table>
-        </div>
-        <div class="table-padding">
-            <table class="forum-table">
-                <tr>
-                    <th colspan="2" style="text-align: center">Title</th>
-                </tr>
-                <tr>
-                    <td>Bill Gates</td>
-                    <td>55577854</td>
-                </tr>
-            </table>
-        </div>
-        <div class="table-padding">
-            <table class="forum-table">
-                <tr>
-                    <th colspan="2" style="text-align: center">Title</th>
-                </tr>
-                <tr>
-                    <td>Bill Gates</td>
-                    <td>55577854</td>
-                </tr>
-            </table>
-        </div>
-        <div class="table-padding">
-            <table class="forum-table">
-                <tr>
-                    <th colspan="2" style="text-align: center">Title</th>
-                </tr>
-                <tr>
-                    <td>Bill Gates</td>
-                    <td>55577854</td>
-                </tr>
-            </table>
-        </div>
-        <div class="table-padding">
-            <table class="forum-table">
-                <tr>
-                    <th colspan="2" style="text-align: center">Title</th>
-                </tr>
-                <tr>
-                    <td>Bill Gates</td>
-                    <td>55577854</td>
-                </tr>
-            </table>
-        </div>
-        <div class="table-padding">
-            <table class="forum-table">
-                <tr>
-                    <th colspan="2" style="text-align: center">Title</th>
-                </tr>
-                <tr>
-                    <td>Bill Gates</td>
-                    <td>55577854</td>
-                </tr>
-            </table>
-        </div>
-        <div class="table-padding">
-            <table class="forum-table">
-                <tr>
-                    <th colspan="2" style="text-align: center">Title</th>
-                </tr>
-                <tr>
-                    <td>Bill Gates</td>
-                    <td>55577854</td>
-                </tr>
-            </table>
-        </div>
-        <div class="table-padding">
-            <table class="forum-table">
-                <tr>
-                    <th colspan="2" style="text-align: center">Title</th>
-                </tr>
-                <tr>
-                    <td>Bill Gates</td>
-                    <td>55577854</td>
-                </tr>
-            </table>
-        </div>
-        <div class="table-padding">
-            <table class="forum-table">
-                <tr>
-                    <th colspan="2" style="text-align: center">Title</th>
-                </tr>
-                <tr>
-                    <td>Bill Gates</td>
-                    <td>55577854</td>
-                </tr>
-            </table>
-        </div>
-        <div class="table-padding">
-            <table class="forum-table">
-                <tr>
-                    <th colspan="2" style="text-align: center">Title</th>
-                </tr>
-                <tr>
-                    <td>Bill Gates</td>
-                    <td>55577854</td>
-                </tr>
-            </table>
-        </div>
-        <div class="table-padding">
-            <table class="forum-table">
-                <tr>
-                    <th colspan="2" style="text-align: center">Title</th>
-                </tr>
-                <tr>
-                    <td>Bill Gates</td>
-                    <td>55577854</td>
-                </tr>
-            </table>
-        </div>
+        @foreach (var forumPost in Model)
+        {
+            <div class="table-padding">
+                <table class="forum-table">
+                    <tr>
+                        <th colspan="2">
+                            @Html.ActionLink(forumPost.ForumPost.Title, "Details", new {id = forumPost.ForumPost.Id})
+                        </th>
+                    </tr>
+                    <tr>
+                        <td><i>Posted by</i> @forumPost.GetUser().UserName</td>
+                        <td>
+                            <i>Posted on </i>
+                            @string.Format("{0}.{1}.{2}",
+                                forumPost.ForumPost.Date.Day.ToString().PadLeft(2, '0'),
+                                forumPost.ForumPost.Date.Month.ToString().PadLeft(2, '0'),
+                                forumPost.ForumPost.Date.Year)
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        }
     </main>
 
 </body>

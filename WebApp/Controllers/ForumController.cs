@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApp.Models;
+using WebApp.ViewModels;
 
 namespace WebApp.Controllers
 {
@@ -17,7 +18,13 @@ namespace WebApp.Controllers
         // GET: Forum
         public ActionResult Index()
         {
-            return View(db.ForumPosts.ToList());
+            var forumPosts = db.ForumPosts
+                .OrderByDescending(f => f.Date)
+                .Take(10)
+                .Select(f => new ForumPostViewModel { ForumPost = f })
+                .ToList();
+
+            return View(forumPosts);
         }
 
         // GET: Forum/Details/5
@@ -46,8 +53,12 @@ namespace WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Body,Date,AuthorId")] ForumPost forumPost)
+        public ActionResult Create([Bind(Include = "Id,Title,Body,AuthorId")] ForumPost forumPost)
         {
+            ApplicationDbContext applicationDbContext = new ApplicationDbContext();
+            forumPost.AuthorId = applicationDbContext.Users
+                .First(u => u.UserName == User.Identity.Name).Id;
+
             if (ModelState.IsValid)
             {
                 db.ForumPosts.Add(forumPost);
