@@ -7797,3 +7797,23 @@ table, .table_legenda th, .table_legenda td {
 .no-comments {
     font-weight: bold; 
 }
+
+.comment-button {
+    background-color: #EAEAEA;
+    border: none;
+    color: #27AE61;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 95%;
+}
+
+.comment-button:hover {
+    background-color: white;
+}

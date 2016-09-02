@@ -74,7 +74,7 @@ namespace WebApp.Controllers
         }
 
         // GET: Forum/Edit/5
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -94,20 +94,20 @@ namespace WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "Id,Title,Body,Date,AuthorId")] ForumPost forumPost)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(forumPost).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new {id = forumPost.Id});
             }
             return View(forumPost);
         }
 
         // GET: Forum/Delete/5
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -125,7 +125,7 @@ namespace WebApp.Controllers
         // POST: Forum/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             ForumPost forumPost = db.ForumPosts.Find(id);

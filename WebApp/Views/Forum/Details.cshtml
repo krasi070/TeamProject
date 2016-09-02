@@ -22,7 +22,7 @@
                 <tr>
                     <th colspan="2" style="text-align: center">
                         @Model.ForumPost.Title
-                        @if (User.IsInRole("Admin") || User.Identity.Name == Model.GetUser().UserName)
+                        @if (User.IsInRole("Admin"))
                         {
                             <span>
                                 [@Html.ActionLink("Edit", "Edit", new { id = Model.ForumPost.Id }) |
@@ -53,6 +53,7 @@
         </div>
         <h1>Comments</h1>
         <hr style="width: 70%; border-width: 5px">
+        <button class="comment-button" onclick="location.href='@Url.Action("Create", "Comments", new {id = Model.ForumPost.Id})'">Comment</button>
         @{
             var comments = Model.GetCommentsAsViewModel();
         }
@@ -76,6 +77,13 @@
                         <td colspan="2">
                             <p>
                                 @comment.Comment.Text
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <span>
+                                        [<a href="/Comments/Edit/@comment.Comment.Id">Edit</a> |
+                                        <a href="/Comments/Delete/@comment.Comment.Id">Delete</a>]
+                                    </span>
+                                }
                             </p>
                         </td>
                     </tr>
