@@ -1,12 +1,12 @@
 ﻿@model WebApp.ViewModels.ForumPostViewModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.ForumPost.Title;
 }
 
 <body class="striped-background">
     <div class="left-part">
-        <button class="question-button">+New Question</button>
+        <button class="question-button" onclick="location.href='@Url.Action("Create", "Forum")'">+New Question</button>
         <h1 style="text-align: center">Tags</h1>
         <ul class="tags">
             @{

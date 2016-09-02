@@ -158,7 +158,7 @@ namespace WebApp.Controllers
             {
                 return HttpNotFound();
             }
-            return View(forumPost);
+            return View(new ForumPostViewModel() { ForumPost = forumPost });
         }
 
         // POST: Forum/Delete/5

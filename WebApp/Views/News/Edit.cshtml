@@ -1,7 +1,7 @@
 ﻿@model WebApp.Models.News
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit " + Model.Title;
 }
 <head>
     @section Scripts {
@@ -47,9 +47,5 @@
             </div>
         </div>
     }
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
     </body>
     
