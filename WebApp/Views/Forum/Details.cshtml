@@ -9,12 +9,25 @@
         <button class="question-button">+New Question</button>
         <h1 style="text-align: center">Tags</h1>
         <ul class="tags">
-            <li><a href="#">Tag1</a></li>
-            <li><a href="#">Tag2</a></li>
-            <li><a href="#">Tag3</a></li>
-            <li><a href="#">Tag4</a></li>
-            <li><a href="#">Tag5</a></li>
+            @{
+                int count = 0;
+                int max = 10;
+            }
+
+            @foreach (var tag in Model.ForumPost.Tags)
+            {
+                <li>@Html.ActionLink(tag.Name, "Index", new {tag = tag.Name})</li>
+                count++;
+                if (count >= max)
+                {
+                    break;
+                }
+            }
         </ul>
+        @if (Model.ForumPost.Tags.Count == 0)
+        {
+            <span class="no-comments-tags no-tags">This post doesn't have tags.</span>
+        }
     </div>
     <div class="right-part">
         <div class="table-padding">
@@ -56,6 +69,9 @@
         <button class="comment-button" onclick="location.href='@Url.Action("Create", "Comments", new {id = Model.ForumPost.Id})'">Comment</button>
         @{
             var comments = Model.GetCommentsAsViewModel();
+            comments = comments
+                .OrderByDescending(c => c.Comment.Date)
+                .ToList();
         }
 
         @foreach (var comment in comments)
@@ -92,7 +108,7 @@
         }
         @if (comments.Count == 0)
         {
-            <span class="no-comments">There are no comments. Be the first one to comment on this post.</span>
+            <span class="no-comments-tags">There are no comments. Be the first one to comment on this post.</span>
         }
     </div>
 </body>

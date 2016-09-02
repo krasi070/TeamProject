@@ -16,12 +16,29 @@ namespace WebApp.Controllers
         private PokemonDbContext db = new PokemonDbContext();
 
         // GET: Forum
-        public ActionResult Index()
+        public ActionResult Index(string tag = null)
         {
-            var forumPosts = db.ForumPosts
+            if (string.IsNullOrEmpty(tag))
+            {
+                var recentPosts = db.ForumPosts
                 .OrderByDescending(f => f.Date)
                 .Take(10)
                 .Select(f => new ForumPostViewModel { ForumPost = f })
+                .ToList();
+
+                return View(recentPosts);
+            }
+
+            Tag tagToSearchBy = db.Tags.FirstOrDefault(t => t.Name == tag);
+            if (tagToSearchBy == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var forumPosts = tagToSearchBy.ForumPosts
+                .OrderByDescending(f => f.Date)
+                .Select(f => new ForumPostViewModel() { ForumPost = f })
+                .Take(10)
                 .ToList();
 
             return View(forumPosts);
@@ -57,11 +74,33 @@ namespace WebApp.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create([Bind(Include = "Id,Title,Body")] ForumPost forumPost)
+        public ActionResult Create([Bind(Include = "Id,Title,Body")] ForumPost forumPost, string tags)
         {
             ApplicationDbContext applicationDbContext = new ApplicationDbContext();
             forumPost.AuthorId = applicationDbContext.Users
                 .First(u => u.UserName == User.Identity.Name).Id;
+            var forumPostTags = tags
+                .Split(new[] {';'}, StringSplitOptions.RemoveEmptyEntries)
+                .Select(t => t.Trim())
+                .Distinct()
+                .ToList();
+            foreach (var tag in forumPostTags)
+            {
+                if (!db.Tags.Any(t => t.Name == tag))
+                {
+                    Tag currTag = new Tag() { Name = tag };
+                    currTag.ForumPosts.Add(forumPost);
+                    db.Tags.Add(currTag);
+                    forumPost.Tags.Add(currTag);
+                }
+                else
+                {
+                    Tag currTag = db.Tags.FirstOrDefault(t => t.Name == tag);
+                    currTag.ForumPosts.Add(forumPost);
+                    forumPost.Tags.Add(currTag);
+                }
+            }
+
 
             if (ModelState.IsValid)
             {

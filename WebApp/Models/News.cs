@@ -8,6 +8,11 @@ namespace WebApp.Models
 
     public partial class News
     {
+        public News()
+        {
+            this.Date = DateTime.Now;
+        }
+
         public int Id { get; set; }
 
         [Required]

@@ -1,4 +1,5 @@
-﻿@using WebApp.ViewModels
+﻿@using WebApp.Models
+@using WebApp.ViewModels
 @{
     ViewBag.Title = "Forum Page";
 }
@@ -8,13 +9,36 @@
 <body class="striped-background">
     <aside class="left-part">
         <button class="question-button" onclick="location.href='@Url.Action("Create", "Forum")'">+New Question</button>
-        <h1 style="text-align: center">Tags</h1>
+        <h1 style="text-align: center">Random Tags</h1>
         <ul class="tags">
-            <li><a href="#">Tag1</a></li>
-            <li><a href="#">Tag2</a></li>
-            <li><a href="#">Tag3</a></li>
-            <li><a href="#">Tag4</a></li>
-            <li><a href="#">Tag5</a></li>
+            @{
+                List<string> tags = new List<string>();
+                Random random = new Random();
+            }
+
+            @foreach (var forumPost in Model)
+            {
+                var currTags = forumPost.ForumPost.Tags
+                    .Select(t => t.Name)
+                    .Distinct()
+                    .ToList();
+                tags.AddRange(currTags);
+            }
+
+            @{
+                tags = tags.Distinct().ToList();
+                List<string> addedTags = new List<string>();
+            }
+
+            @for (int i = 0; i < 10; i++)
+            {
+                string randomTag = tags[random.Next(0, tags.Count)];
+                if (!addedTags.Contains(randomTag))
+                {
+                    addedTags.Add(randomTag);
+                    <li>@Html.ActionLink(randomTag, "Index", new { tag = randomTag })</li>
+                }
+            }
         </ul>
     </aside>
 
